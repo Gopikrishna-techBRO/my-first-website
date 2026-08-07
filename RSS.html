@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Learn about Krishna consciousness, bhakti-yoga and ISKCON philosophy.">
+
+    <title>Radha Shyamsundara | Krishna Consciousness</title>
+
+    <style>
+
+        /* =========================
+           GENERAL SETTINGS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: #fffaf0;
+            color: #3b2415;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           NAVIGATION BAR
+        ========================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 15px 7%;
+
+            background: rgba(91, 45, 15, 0.97);
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd166;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(50, 20, 5, 0.55),
+                    rgba(50, 20, 5, 0.65)
+                ),
+                url("radha-shyamsundar.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 80px);
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #ffd166;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            background: #ffd166;
+            color: #542d12;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            background: #ffb703;
+        }
+
+        /* =========================
+           COMMON SECTION
+        ========================== */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: #7b3f00;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* =========================
+           PHILOSOPHY CARDS
+        ========================== */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.1);
+
+            border-top: 5px solid #d97706;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #7b3f00;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           QUOTE SECTION
+        ========================== */
+
+        .quote-section {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b3f00,
+                    #3e1f0d
+                );
+
+            color: white;
+        }
+
+        .quote {
+            max-width: 850px;
+            margin: auto;
+
+            font-size: 27px;
+            font-style: italic;
+        }
+
+        .quote-author {
+            margin-top: 20px;
+            color: #ffd166;
+            font-weight: bold;
+        }
+
+        /* =========================
+           MANTRA
+        ========================== */
+
+        .mantra {
+            text-align: center;
+
+            background: #fff1c7;
+        }
+
+        .mantra-text {
+            max-width: 900px;
+            margin: 30px auto;
+
+            padding: 30px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            font-size: 25px;
+            font-weight: bold;
+
+            color: #8b4513;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* =========================
+           PRACTICES
+        ========================== */
+
+        .practice-list {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .practice {
+            display: flex;
+            align-items: center;
+
+            gap: 20px;
+
+            background: white;
+
+            margin: 15px 0;
+            padding: 20px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .practice-number {
+            min-width: 50px;
+            height: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #d97706;
+            color: white;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           IMAGE SECTION
+        ========================== */
+
+        .image-section {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 30px;
+
+            align-items: center;
+        }
+
+        .image-section img {
+            width: 100%;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* =========================
+           CALL TO ACTION
+        ========================== */
+
+        .cta {
+            text-align: center;
+            background: #f3dfb3;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            color: #6b3500;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background: #32190b;
+
+            color: white;
+        }
+
+        footer h2 {
+            color: #ffd166;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           MOBILE DESIGN
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .quote {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            🪷 Radha Shyamsundara
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#philosophy">Philosophy</a>
+            </li>
+
+            <li>
+                <a href="#bhakti">Bhakti</a>
+            </li>
+
+            <li>
+                <a href="#mantra">Mantra</a>
+            </li>
+
+            <li>
+                <a href="#practices">Practices</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hare Krishna 🙏</h1>
+
+            <h2>Welcome to Krishna Consciousness</h2>
+
+            <p>
+                A journey of devotion, self-realization,
+                service and remembrance of Krishna.
+            </p>
+
+            <a href="#philosophy" class="btn">
+                Explore the Philosophy
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         INTRODUCTION
+    ========================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>🪷 The Path of Bhakti</h2>
+
+            <p>
+                Krishna consciousness teaches that the
+                ultimate purpose of life is to understand
+                our spiritual identity and develop loving
+                devotion toward the Supreme Lord.
+            </p>
+
+        </div>
+
+
+        <div class="image-section">
+
+            <img
+                src="radha-shyamsundar.jpg"
+                alt="Radha Shyamsundara">
+
+            <div>
+
+                <h2>Radha–Shyāmasundara</h2>
+
+                <p>
+                    In the Vaishnava tradition, Krishna is
+                    understood as the Supreme Personality of
+                    Godhead, and Srimati Radharani is revered
+                    as His supreme devotee and divine
+                    counterpart.
+                </p>
+
+                <br>
+
+                <p>
+                    Devotees cultivate remembrance of Krishna
+                    through chanting, hearing, worship,
+                    studying scripture and serving others.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PHILOSOPHY
+    ========================== -->
+
+    <section id="philosophy">
+
+        <div class="section-title">
+
+            <h2>📖 Foundations of ISKCON Philosophy</h2>
+
+            <p>
+                These are some important ideas within the
+                Gaudiya Vaishnava tradition followed by ISKCON.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">🕉️</div>
+
+                <h3>Our Spiritual Identity</h3>
+
+                <p>
+                    The living being is understood as an
+                    eternal spiritual soul, distinct from
+                    the temporary physical body.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">💙</div>
+
+                <h3>Krishna</h3>
+
+                <p>
+                    Krishna is understood as the Supreme
+                    Personality of Godhead and the ultimate
+                    source of all existence.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">📿</div>
+
+                <h3>Bhakti-Yoga</h3>
+
+                <p>
+                    Bhakti-yoga is the path of developing
+                    loving devotion through practices such
+                    as chanting, hearing and service.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🌱</div>
+
+                <h3>Karma & Rebirth</h3>
+
+                <p>
+                    Vedic philosophy explains that actions
+                    have consequences and that the soul
+                    experiences repeated birth and death
+                    until spiritual liberation.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">📚</div>
+
+                <h3>Bhagavad-gītā</h3>
+
+                <p>
+                    The Bhagavad-gītā presents teachings
+                    on the soul, duty, yoga, devotion and
+                    the relationship between the individual
+                    and Krishna.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">❤️</div>
+
+                <h3>Seva</h3>
+
+                <p>
+                    Spiritual life includes service.
+                    Devotees try to use their abilities,
+                    time and resources in service to Krishna
+                    and others.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUOTE
+    ========================== -->
+
+    <section class="quote-section">
+
+        <div class="quote">
+
+            "The goal of spiritual life is to awaken
+            our natural relationship with the Supreme
+            and develop genuine devotion."
+
+        </div>
+
+        <div class="quote-author">
+            — Krishna-consciousness principle
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BHAGAVAD GITA
+    ========================== -->
+
+    <section id="bhakti">
+
+        <div class="section-title">
+
+            <h2>📜 Bhagavad-gītā</h2>
+
+            <p>
+                The Bhagavad-gītā is a dialogue between
+                Krishna and Arjuna on the battlefield of
+                Kurukshetra.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">🧘</div>
+
+                <h3>Self-Realization</h3>
+
+                <p>
+                    Understand the difference between the
+                    temporary body and the eternal self.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">⚔️</div>
+
+                <h3>Dharma</h3>
+
+                <p>
+                    Learn how to perform one's responsibilities
+                    while developing spiritual consciousness.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🙏</div>
+
+                <h3>Devotion</h3>
+
+                <p>
+                    Krishna teaches the importance of
+                    surrender and loving devotional service.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAHA MANTRA
+    ========================== -->
+
+    <section class="mantra" id="mantra">
+
+        <div class="section-title">
+
+            <h2>📿 Hare Krishna Mahā-mantra</h2>
+
+            <p>
+                Chanting the Hare Krishna mantra is a
+                central spiritual practice in ISKCON.
+            </p>
+
+        </div>
+
+
+        <div class="mantra-text">
+
+            Hare Krishna Hare Krishna<br>
+
+            Krishna Krishna Hare Hare<br>
+
+            Hare Rama Hare Rama<br>
+
+            Rama Rama Hare Hare
+
+        </div>
+
+        <p>
+            The mantra is traditionally chanted as a
+            meditation and devotional practice.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOUR PRINCIPLES
+    ========================== -->
+
+    <section id="practices">
+
+        <div class="section-title">
+
+            <h2>🌱 Four Regulative Principles</h2>
+
+            <p>
+                ISKCON devotees traditionally follow four
+                regulative principles as part of their
+                spiritual discipline.
+            </p>
+
+        </div>
+
+
+        <div class="practice-list">
+
+            <div class="practice">
+
+                <div class="practice-number">1</div>
+
+                <div>
+                    <h3>No meat, fish or eggs</h3>
+
+                    <p>
+                        Devotees follow a vegetarian diet
+                        and traditionally offer food to Krishna.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="practice">
+
+                <div class="practice-number">2</div>
+
+                <div>
+                    <h3>No intoxication</h3>
+
+                    <p>
+                        Avoiding intoxicating substances
+                        supports clarity and spiritual discipline.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="practice">
+
+                <div class="practice-number">3</div>
+
+                <div>
+                    <h3>No gambling</h3>
+
+                    <p>
+                        Devotees avoid gambling as part
+                        of cultivating a disciplined lifestyle.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="practice">
+
+                <div class="practice-number">4</div>
+
+                <div>
+                    <h3>No illicit sexual activity</h3>
+
+                    <p>
+                        Devotees follow traditional principles
+                        of responsible and disciplined family life.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SRILA PRABHUPADA
+    ========================== -->
+
+    <section>
+
+        <div class="image-section">
+
+            <div>
+
+                <h2>📚 Srila Prabhupada</h2>
+
+                <br>
+
+                <p>
+                    His Divine Grace A. C. Bhaktivedanta
+                    Swami Prabhupada founded the International
+                    Society for Krishna Consciousness (ISKCON)
+                    in 1966.
+                </p>
+
+                <br>
+
+                <p>
+                    He translated and commented on important
+                    Vaishnava texts and established temples,
+                    communities and educational programs
+                    dedicated to spreading Krishna consciousness.
+                </p>
+
+            </div>
+
+
+            <img
+                src="srila-prabhupada.jpg"
+                alt="Srila Prabhupada">
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALL TO ACTION
+    ========================== -->
+
+    <section class="cta">
+
+        <h2>Begin Your Spiritual Journey 🪷</h2>
+
+        <p>
+            Hear about Krishna, chant His holy names,
+            study spiritual literature and engage in seva.
+        </p>
+
+        <br>
+
+        <a href="#home" class="btn">
+            Back to Top ↑
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h2>Hare Krishna 🙏</h2>
+
+        <p>
+            Radha–Shyāmasundara • Bhakti • Seva •
+            Spiritual Knowledge
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Krishna Consciousness Learning Page
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // Welcome message when the webpage loads
+
+        window.onload = function() {
+
+            console.log(
+                "Hare Krishna! Welcome to the website."
+            );
+
+        };
+
+    </script>
+
+</body>
+
+</html>
